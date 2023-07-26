@@ -59,16 +59,5 @@ def save_stripe_info(request):
                                 currency='pln', amount=1500,  #amount=amount*100
                                 confirm=True)
 
-    # creating subscription
-
-    # stripe.Subscription.create(
-    #     customer=customer,
-    #     items=[
-    #         {
-    #             'price': 'price_1...'
-    #         }
-    #     ]
-    # )
-
     return Response(status=status.HTTP_200_OK, data={'message': 'Success', 'data': {'customer_id': customer.id,
                                                                                     'extra_msg': extra_msg}})
